@@ -60,6 +60,9 @@ L.DistortableImage.Edit = L.Handler.extend({
 
 		//overlay.on('click', this._showToolbar, this);
 		L.DomEvent.on(overlay, 'click', this._showToolbar, this);
+                // attempt to get right-click to open menu
+                L.DomEvent.on(overlay, 'contextmenu', this._showToolbar, this);
+                L.DomEvent.on(overlay, 'contextmenu', function(){console.log('hi')}, this);
 
 		/* Enable hotkeys. */
 		L.DomEvent.on(window, 'keydown', this._onKeyDown, this);
